@@ -41,6 +41,7 @@ public class PlayerDeath : MonoBehaviour
          {
 
             hit();
+            Debug.Log(collision.gameObject.name);
          }
 
         }

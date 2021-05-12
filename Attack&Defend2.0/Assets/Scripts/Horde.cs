@@ -11,7 +11,9 @@ public class Horde : MonoBehaviour
     [SerializeField] int Round;
     [SerializeField] int HordeSize;
     GameObject ZombieInstance;
+    GameObject JugInstance;
     [SerializeField] GameObject Enemies;
+    [SerializeField] GameObject Jug;
    // [SerializeField] GameObject SpecialZombie;
  //   GameObject FinalBoss;
     int x = 0;
@@ -59,6 +61,11 @@ public class Horde : MonoBehaviour
         }
   
         x = 0;
+        if (Round > 3)
+        {
+            JugInstance = Instantiate(Jug, transform) as GameObject;
+            JugInstance.transform.Translate(10, 0, 0);
+        }
 
     //    if (Round == 5)
       //  {

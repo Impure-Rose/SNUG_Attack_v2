@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8765371518138801642}
   - component: {fileID: 569007713884464968}
   - component: {fileID: 1992392411676965572}
-  - component: {fileID: 3770116688099783874}
   m_Layer: 9
   m_Name: Dart Tip
   m_TagString: Untagged
@@ -83,20 +82,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3770116688099783874
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4942045905883696746}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000003
-  m_Height: 2.0000007
-  m_Direction: 1
-  m_Center: {x: 0.0000014901161, y: -0.00000071525574, z: 0.0000003874302}
 --- !u!1 &6157225472453025930
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,10 +178,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 0.5034443
+  m_Height: 2.9013734
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0.0034442698, y: -0.14338169, z: -0.00000006395989}
 --- !u!54 &2203698831805613418
 Rigidbody:
   m_ObjectHideFlags: 0

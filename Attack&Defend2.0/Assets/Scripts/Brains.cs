@@ -11,7 +11,7 @@ public class Brains : MonoBehaviour
     [SerializeField] int dmg;
     [SerializeField] int death = 1;
     private NavMeshAgent agent;
-    public ZDMZombieSpawn zombieRefernce; 
+  //  public ZDMZombieSpawn zombieRefernce; 
   
 
     // Start is called before the first frame update
@@ -36,13 +36,13 @@ public class Brains : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ammo"))
         {
             dmg++;
-            Debug.Log("Hit");
+            Debug.Log("Hit by " + collision.gameObject.name);
         }
         //De-spawn enemies upon death
         if (dmg == death)
         {
             Debug.Log("I am dying now!");
-            zombieRefernce.maxHordeSize++;
+            //zombieRefernce.maxHordeSize++;
             
             Destroy(gameObject);
 

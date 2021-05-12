@@ -40,7 +40,7 @@ public class Shoot : MonoBehaviour
 
 
         //Throws Socks 
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetKeyDown(KeyCode.G))
         {
             if (socks > 0)
             {

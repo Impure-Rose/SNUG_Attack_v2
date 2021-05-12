@@ -8,7 +8,7 @@ public class ZDMPlayerSpawn : MonoBehaviour
     [SerializeField] public static int maxTeamSize=10;
     GameObject teamInst;
     [SerializeField] GameObject team;
-   [SerializeField] private ZDMZombieSpawn scriptReference;
+   //[SerializeField] private ZDMZombieSpawn scriptReference;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class ZDMPlayerSpawn : MonoBehaviour
         while (teamSize != maxTeamSize)
         {
             teamInst = Instantiate(team, transform) as GameObject;
-            teamInst.GetComponent<Brains>().zombieRefernce = scriptReference;
+            //teamInst.GetComponent<Brains>().zombieRefernce = scriptReference;
             teamInst.transform.Translate(0, 0, teamSize * 2);
             teamSize++;
         }
