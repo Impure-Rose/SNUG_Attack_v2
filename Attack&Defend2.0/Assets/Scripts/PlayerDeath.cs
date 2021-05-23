@@ -10,6 +10,8 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField] bool infected = false; 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI youDied;
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject resumeButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +23,13 @@ public class PlayerDeath : MonoBehaviour
     {
      if (health<=0 )
         {
-            youDied.text = "You have joined the horde! (Press ESC to Exit)";
+            youDied.text = "You have joined the horde!";
             Time.timeScale = 0f;
+            pauseMenu.SetActive(true);
+            Cursor.visible = true;
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.Confined;
+            resumeButton.SetActive(false);
         }
 
         
@@ -36,7 +43,6 @@ public class PlayerDeath : MonoBehaviour
     {
 
 
-        //Realizing that killing the player is too much of a hassle but if I need to reenable it I will 
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemies")) ;
          {
 
@@ -48,7 +54,9 @@ public class PlayerDeath : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Infection") { 
         infected = true;
+         }
        
     }
 

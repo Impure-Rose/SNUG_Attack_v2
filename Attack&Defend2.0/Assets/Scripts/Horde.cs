@@ -8,14 +8,21 @@ using TMPro;
 
 public class Horde : MonoBehaviour
 {
+    [Header("Set Up")]
     [SerializeField] int Round;
     [SerializeField] int HordeSize;
+    [Header("Zombies")]
     GameObject ZombieInstance;
     GameObject JugInstance;
+    GameObject PychoInstance;
+    GameObject GhoulInstance;
+    GameObject MeatShieldInstance;
     [SerializeField] GameObject Enemies;
     [SerializeField] GameObject Jug;
-   // [SerializeField] GameObject SpecialZombie;
- //   GameObject FinalBoss;
+    [SerializeField] GameObject Pycho;
+    [SerializeField] GameObject Ghoul;
+    [SerializeField] GameObject MeatShield;
+
     int x = 0;
     [SerializeField] private AudioSource Special;
 
@@ -61,22 +68,24 @@ public class Horde : MonoBehaviour
         }
   
         x = 0;
-        if (Round > 3)
+
+        SpawnClass(3, Jug, JugInstance);
+        SpawnClass(4, Jug, JugInstance);
+        SpawnClass(5, Ghoul, GhoulInstance);
+        SpawnClass(6, Ghoul, GhoulInstance);
+        SpawnClass(8, MeatShield, MeatShieldInstance);
+        SpawnClass(9, MeatShield, MeatShieldInstance);
+        SpawnClass(10, Pycho, PychoInstance);
+        SpawnClass(11, Pycho, PychoInstance);
+
+    }
+
+    void SpawnClass(int minimumRound, GameObject zombieClass, GameObject classInstance)
+    {
+        if (Round > minimumRound)
         {
-            JugInstance = Instantiate(Jug, transform) as GameObject;
-            JugInstance.transform.Translate(10, 0, 0);
+            classInstance = Instantiate(zombieClass, transform) as GameObject;
+            classInstance.transform.Translate(10, 0, 0);
         }
-
-    //    if (Round == 5)
-      //  {
-        //    Special.Play();
-          //  Debug.Log("Audio clip is being played");
-
-       // }
-       // if (Round>=5)
-       // {
-         //   FinalBoss = Instantiate(SpecialZombie, transform) as GameObject;
-
-//        }
     }
 }

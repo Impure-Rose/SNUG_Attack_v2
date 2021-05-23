@@ -9,7 +9,8 @@ public class BlasterSwapping : MonoBehaviour
     [SerializeField] Renderer megaRend;
     [SerializeField] Renderer rivalRend;
 
-
+    [SerializeField] private GameObject Artemis;
+    [SerializeField] private GameObject Centurion;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,8 @@ public class BlasterSwapping : MonoBehaviour
             rivalRend.enabled = true;
             megaRend.enabled = false;
             Debug.Log("Artemis Active!");
+            Artemis.SetActive(true);
+            Centurion.SetActive(false);
 
         }
 
@@ -43,6 +46,8 @@ public class BlasterSwapping : MonoBehaviour
             rivalRend.enabled = false;
             megaRend.enabled = true;
             Debug.Log("Centurion Active!");
+            Artemis.SetActive(false);
+            Centurion.SetActive(true);
         }
     }
 }

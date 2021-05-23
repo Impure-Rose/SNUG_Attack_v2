@@ -20,6 +20,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] Rigidbody thrown;
     [SerializeField] Transform hand;
     Rigidbody sockinstance;
+    [SerializeField] private AudioSource popSound;
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI counter;
@@ -30,7 +31,8 @@ public class Shoot : MonoBehaviour
     {
         Ammo = maxAmmo;
         counter.text = "Ammo: " + Ammo + "/" + maxAmmo;
-        SockUI.text = "Socks: " + socks + "/5";
+        SockUI.text = "Socks: " + socks + "/" +maxSocks;
+        popSound = GetComponent<AudioSource>();
 
     }
 
@@ -61,6 +63,7 @@ public class Shoot : MonoBehaviour
                 //calculates ammo remaining if there is ammo remaining the blaster can fire. 
                 Ammo--;
                 counter.text = "Ammo: " + Ammo + "/" + maxAmmo;
+                popSound.Play();
                 Fire();
                 Debug.Log(Ammo);
 
@@ -78,7 +81,7 @@ public class Shoot : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             maxAmmo = 6;
-            maxSocks = 0;
+            maxSocks = 5;
             Reload();
         }
         //Reload, calls reload function
@@ -104,7 +107,7 @@ public class Shoot : MonoBehaviour
         //resets the ammo counter
         Ammo = maxAmmo;
         reload = false;
-        socks = 5;
+        socks = maxSocks;
 
     }
 }
